@@ -2,11 +2,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>JSP - Hello World</title>
+    <title>JSP - Login Servlet</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        form>div{
+            padding: 20px;
+        }
+        body{
+            text-align: center;
+        }
+        #title-banner{
+            color: #4775e3;
+            padding: 15px;
+            margin-top: 2rem;
+        }
+    </style>
 </head>
 <body>
-<h1><%= "Hello World!" %></h1>
+<h1 id="title-banner"><%= "Welcome to Login!" %>
+</h1>
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
+<form method="post" action="/login_servlet_war_exploded/login">
+    <div>
+        <b><label>Enter Username:</label></b>
+        <input type="text" name="userName" required/>
+    </div>
+    <div>
+        <b><label>Enter Password:</label></b>
+        <input type="password" name="password" required/>
+    </div>
+    <div>
+        <input type="submit" value="Validate Credentials" />
+    </div>
+</form>
 </body>
 </html>
